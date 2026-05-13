@@ -20,8 +20,6 @@ public class TokenService {
     public TokenService(@Value("${JWT_SECRET}") String secret) {
         this.algorithm = Algorithm.HMAC256(secret);
     }
-//private static final String SECRET_KEY = "prueba_token_gyl_2026_no_robar";
-//    private final Algorithm algorithm = Algorithm.HMAC256(SECRET_KEY);
 
     public String getToken(UserDetails user) {
         return JWT.create()
